@@ -1,21 +1,37 @@
-# get the list of all possible ingredients from the list of all recipes
+import pymongo
+import json
+import postRecipes
 
-recipeFile = open("recipes.txt", 'r')
-recipes = recipeFile.readlines()
-recipeFile.close()
-Ingredients = set()
+# get a list of dictionaries representing the recipes
+def readRecipes():
+    recipeFile = open("recipes.txt", 'w')
+    recipes = recipeFile.readlines()
+    recipeList = []
+    for recipe in recipes:
+        items = recipe.split(',')
+        name = items[0]
+        ingredients = []
+        for i in range(1, len(items)):
+            ingredients.append(items[i].strip(' ').strip('\n'))
+        recipeList.append({'Name': name, 'Ingredients': ingredients})
+    return recipeList
 
-for i in range(0, len(recipes)):
-    items = recipes[i].split(',')
-    newItems = []
-    for j in range(0, len(items)):
-        newItems.append(items[j].strip(' ').strip('\n'))
-    items = newItems[1:]
-    for item in items:
-        if(not (item is "" or item is "\n" or item is " ")):
-            Ingredients.add(item)
+def clearData(): 
+    # connecting to the Atlas cluster
+    client = pymongo.MongoClient("mongodb+srv://npysklyw:Maer1234@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority")
 
-ingredientsFile = open("ingredients.txt", 'w')
-for ing in Ingredients:
-    ingredientsFile.write(ing + "\n")
-ingredientsFile.close()
+    # accessing recipe collection
+    db = client.Recipe
+    Recipes = db.Recipe
+
+    # remove all documents from the collection
+    Recipes.remove({})
+
+# clear the old mongodb collection and post the new data
+def run():
+    clearData()
+    postRecipes.postRecipeData(readRecipes())
+
+
+run()
+
