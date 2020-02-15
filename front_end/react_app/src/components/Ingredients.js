@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 class Ingredients extends Component {
     
-  
+    
     
     render(){
 
@@ -14,7 +14,7 @@ class Ingredients extends Component {
         // console.log(this.props.ingredients)
         
         return this.props.ingredients.map((ingredient) => (
-            <IndividualIngredient key={ingredient.id} ingredient = {ingredient} markComplete = {this.props.markComplete} />
+            <IndividualIngredient key={ingredient.id} ingredient = {ingredient} markComplete = {this.props.markComplete} delIngredient = {this.props.delIngredient} />
         ));
     }
 }

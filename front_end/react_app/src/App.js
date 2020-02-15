@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from  './components/layout/Header'
 import Ingredients from './components/Ingredients'
 import './App.css';
+
 
 class App extends Component{
 
@@ -19,22 +21,36 @@ class App extends Component{
       {
         id:3,
         title: "Rice",
-        completed: true
+        completed: false
       }
     ]
   }
-
+    //Toggle Complete
     markComplete = (id) =>{
-      console.log(id)
+      this.setState({ingredients: this.state.ingredients.map(ingredient => {
+        if(ingredient.id === id){
+          ingredient.completed = !ingredient.completed
+        }
+        return ingredient;
+      })});
     }
 
-  render(){
+    delIngredient = (id) => {
+      
+      this.setState({ ingredients: [...this.state.ingredients.filter(ingredient => ingredient.id !== id )]})
+    
+    }
 
+
+  render(){
     return (
 
       <div className="App">
+
+      <Header/>
+
       {/* //This is like calling the function/component */}
-      <Ingredients ingredients = {this.state.ingredients} markComplete = {this.markComplete}/>
+      <Ingredients ingredients = {this.state.ingredients} markComplete = {this.markComplete} delIngredient = {this.delIngredient}/>
       </div>
 
     );
