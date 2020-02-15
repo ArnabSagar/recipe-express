@@ -1,0 +1,12 @@
+chicken
+bread
+mushroom
+pasta
+potato
+bacon
+steak
+turkey
+salsa
+salmon
+fish
+salad
