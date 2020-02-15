@@ -5,7 +5,7 @@ import pprint
 
 def searchRecipes(ingredients):
     # connecting to the Atlas cluster
-    client = pymongo.MongoClient("mongodb+srv://npysklyw:Maer1234@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://npysklyw:hackthevalley@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority")
 
     # accessing recipe collection
     db = client.RecipeOther
