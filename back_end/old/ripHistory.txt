@@ -1,0 +1,16 @@
+A record of the keywords that returned success after the API call
+
+chicken
+bread
+mushroom
+pasta
+potato
+bacon
+steak
+salsa
+salmon
+salad
+
+
+
+

@@ -4,7 +4,7 @@ import postRecipes
 
 # get a list of dictionaries representing the recipes
 def readRecipes():
-    recipeFile = open("recipes.txt", 'w')
+    recipeFile = open("recipes.txt", 'r')
     recipes = recipeFile.readlines()
     recipeList = []
     for recipe in recipes:
@@ -21,7 +21,7 @@ def clearData():
     client = pymongo.MongoClient("mongodb+srv://npysklyw:Maer1234@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority")
 
     # accessing recipe collection
-    db = client.Recipe
+    db = client.RecipeOther
     Recipes = db.Recipe
 
     # remove all documents from the collection
