@@ -1,50 +1,40 @@
 import React, { Component } from 'react';
-import Todos from './components/Todos'
+import Ingredients from './components/Ingredients'
 import './App.css';
 
 class App extends Component{
 
   state = {
-    todos:[
+    ingredients:[
       {
         id:1,
-        title: "diiner",
+        title: "Garlic",
         completed: false
       },
       {
         id:2,
-        title: "trash",
+        title: "Ginger",
         completed: false
       },
       {
         id:3,
-        title: "dance",
-        completed: false
+        title: "Rice",
+        completed: true
       }
     ]
   }
 
+    markComplete = (id) =>{
+      console.log(id)
+    }
+
   render(){
 
     return (
+
       <div className="App">
-        <Todos todos = {this.state.todos}/>
-
-            <div id="myDIV" class="header">
-            <h2>My To Do List</h2>
-            <input type="text" id="myInput" placeholder="Title..."></input>
-            <span onclick="newElement()" class="addBtn">Add</span>
-            </div>
-
-          <ul id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-          </ul>
-
+      {/* //This is like calling the function/component */}
+      <Ingredients ingredients = {this.state.ingredients} markComplete = {this.markComplete}/>
       </div>
 
     );
