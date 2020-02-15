@@ -1,7 +1,7 @@
 import pymongo
 import random
 
-uri = "mongodb+srv://npysklyw:Maer1234@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
+uri = "mongodb+srv://npysklyw:hackthevalley@cluster0-g1qmd.gcp.mongodb.net/test?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 
 # access the atlas cluster
 client = pymongo.MongoClient(uri)
