@@ -10,10 +10,13 @@ def readRecipes():
     for recipe in recipes:
         items = recipe.split(',')
         name = items[0]
+        img = items[1]
+        yiel = items[2]
+        cals = items[3]
         ingredients = []
-        for i in range(1, len(items)):
+        for i in range(4, len(items)):
             ingredients.append(items[i].strip(' ').strip('\n'))
-        recipeList.append({'Name': name, 'Ingredients': ingredients})
+        recipeList.append({'Name': name, 'imgURL': img, 'yield': yiel, 'calories': cals, 'Ingredients': ingredients})
     return recipeList
 
 def clearData(): 
