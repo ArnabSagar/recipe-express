@@ -17,7 +17,7 @@ export class IndividualIngredient extends Component {
 
         const{id, title} =  this.props.ingredient
         return (
-            <div style={this.getStyle()}>
+            <div className='specificItem' style={this.getStyle()}>
                 <p>
                     <input type = "checkbox" onChange = {this.props.markComplete.bind(this, id)}/>{'  '}
                     {title}
@@ -35,8 +35,8 @@ IndividualIngredient.propTypes = {
 
 const btnStyle = {
 
-    backgroundColor: '#ff0000',
-    color: '#fff',
+    backgroundColor: '#fff',
+    color: '#ff0000',
     border: 'none',
     padding: '5px 9px',
     borderRadius: '50%',
