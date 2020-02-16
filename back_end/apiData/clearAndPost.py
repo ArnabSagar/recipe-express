@@ -9,6 +9,8 @@ def readRecipes():
     recipeList = []
     for recipe in recipes:
         items = recipe.split(',')
+        if(len(items) < 5):
+            continue
         name = items[0]
         img = items[1]
         yiel = items[2]
