@@ -17,15 +17,15 @@ def find_matches():
         hits = Recipes.find({"Ingredients":{'$regex':regex1}})
     elif (len(ingredients) == 2):
         regex1 = "^.*" + ingredients[0]
-        regex2 = "^.*" + ingredients[1] 
+        regex2 = "^.*" + ingredients[1]
         hits = Recipes.find({"Ingredients":{'$regex':regex1}, "Ingredients":{'$regex':regex2}})
     else:
         regex1 = "^.*" + ingredients[0]
-        regex2 = "^.*" + ingredients[1] 
+        regex2 = "^.*" + ingredients[1]
         regex3 = "^.*" + ingredients[2]
         hits = Recipes.find({"Ingredients":{'$regex':regex1}, "Ingredients":{'$regex':regex2}, "Ingredients":{'$regex':regex3}})
 
-    ### NEED to convert from the type of hits object to JSON! 
+    ### NEED to convert from the type of hits object to JSON!
     return hits
 
 
@@ -40,4 +40,4 @@ def read_one():
 
 @main.route("/")
 def start():
-    return "fuck you"
+    return "Have a nice day"
