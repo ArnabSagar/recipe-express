@@ -7,7 +7,6 @@ function Header() {  //This is a functional component
             <Link to="/home">
             <img src="./LOGO.png" height='150px' width = '400px' alt="Recipe Express Logo"></img>
             </Link> <br></br>
-            
             <Link style = {linkStyle} to = "/home">Home</Link> | <Link style = {linkStyle} to = "/">Cook </Link>
             | <Link style = {linkStyle} to = "/about" >About</Link>
         </header>

@@ -19,7 +19,7 @@ export class IndividualIngredient extends Component {
         return (
             <div className='specificItem' style={this.getStyle()}>
                 <p>
-                    <input type = "checkbox" onChange = {this.props.markComplete.bind(this, id)}/>{'  '}
+                    
                     {title}
                     <button style={btnStyle} onClick = {this.props.delIngredient.bind(this, id)}>x</button>
                 </p>

@@ -65,12 +65,18 @@ class App extends Component{
           <Header/>
             <Route exact path="/" render={props => (
               <React.Fragment>
-                  <AddIngredients addIngredient={this.addIngredient}  />  
+                  <AddIngredients addIngredient={this.addIngredient}  />
                   {/* includes the function call this.addIngredient */}
                   <div className ='itemsBox'>
                   {/* //This is like calling the function/ and passing arugments*/}
                   <Ingredients ingredients = {this.state.ingredients} markComplete = {this.markComplete} delIngredient = {this.delIngredient}/>
                   </div>
+
+                  <button style = {btnStyle} >
+                    COOK ME UP
+                  </button>
+                {/* ADD MAKE RECIPE BUTTON */}
+
               </React.Fragment>
             )} />
             <Route path = "/about" component={About}/>
@@ -81,6 +87,21 @@ class App extends Component{
 
     );
   }
+}
+
+
+const btnStyle = {
+
+  color: "Black",
+  backgroundColor: '#45a13f',
+  border: '1px solid black',
+  borderRadius: '10px',
+  height: '50px',
+  width: '120px',
+  marginBottom: '5%',
+  textAlign: 'center'
+  
+
 }
 
 export default App;
