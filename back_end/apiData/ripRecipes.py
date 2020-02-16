@@ -22,7 +22,7 @@ count = 0
 for key in keywords:
     count += 1
     if(count % 4 == 0):
-        time.sleep(45)
+        time.sleep(60)
     FULL_URL = BASE_URL + "?q=" + key + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
     response = requests.get(url=FULL_URL)
     if not response.ok:
@@ -33,6 +33,7 @@ for key in keywords:
     for hit in hits:
         recipe = hit["recipe"]
         outFile.write(recipe['label'] + ", ")
+        outFile.write(recipe['image'] + ", ")
         outFile.write(str(recipe['yield']) + ", ")
         outFile.write(str(recipe['calories']) + ", ")
         ingredients = recipe['ingredients']
