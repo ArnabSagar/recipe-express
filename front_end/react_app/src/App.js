@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Header from  './components/layout/Header'
-import Ingredients from './components/Ingredients'
+import Header from  './components/layout/Header';
+import AddIngredients from  './components/AddIngredients';
+import Ingredients from './components/Ingredients';
+
 import './App.css';
 
 
@@ -49,7 +51,9 @@ class App extends Component{
 
       <Header/>
 
-      {/* //This is like calling the function/component */}
+      <AddIngredients />
+
+      {/* //This is like calling the function/ and passing arugments*/}
       <Ingredients ingredients = {this.state.ingredients} markComplete = {this.markComplete} delIngredient = {this.delIngredient}/>
       </div>
 
